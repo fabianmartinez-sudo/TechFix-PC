@@ -1,43 +1,41 @@
-/* 
-   JavaScript - Formulario de contacto
-    */
+document.addEventListener("DOMContentLoaded", function () {
 
-   document.addEventListener("DOMContentLoaded", function () {
-
-    // Obtener el formulario
-    
     const form = document.getElementById("contactForm");
 
-    // Si la página no tiene el formulario,
-    // no ejecutamos el resto del código.
+    // Verificar que el formulario exista
     if (!form) {
+        console.error("No se encontró el formulario #contactForm");
         return;
     }
 
-
-    // Obtener los elementos del formulario
     const nombre = document.getElementById("nombre");
     const email = document.getElementById("email");
     const servicio = document.getElementById("servicio");
     const mensaje = document.getElementById("mensaje");
 
-    // Obtener los espacios donde aparecerán
-    // los mensajes de error
     const nombreError = document.getElementById("nombreError");
     const emailError = document.getElementById("emailError");
     const servicioError = document.getElementById("servicioError");
     const mensajeError = document.getElementById("mensajeError");
 
-    // Mensaje de éxito
     const formSuccess = document.getElementById("formSuccess");
 
 
-    /*
-       Función para limpiar los errores
-       anteriores.
-    */
-    function limpiarErrores() {
+    // Validar correo
+    function correoValido(correo) {
+        const patron = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return patron.test(correo);
+    }
 
+
+    // Cuando se envía el formulario
+    form.addEventListener("submit", function (event) {
+
+        // IMPORTANTE:
+        // Evita que el formulario recargue la página
+        event.preventDefault();
+
+        // Limpiar errores anteriores
         nombreError.textContent = "";
         emailError.textContent = "";
         servicioError.textContent = "";
@@ -50,43 +48,13 @@
 
         formSuccess.classList.remove("show");
         formSuccess.textContent = "";
-    }
 
-
-    /*
-       Función para validar el formato
-       del correo electrónico.
-    */
-    function correoValido(correo) {
-
-        const patron =
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
-        return patron.test(correo);
-    }
-
-
-    /*
-       Evento submit:
-       se ejecuta cuando el usuario
-       intenta enviar el formulario.
-    */
-    form.addEventListener("submit", function (event) {
-
-        // Evita que la página se recargue
-        event.preventDefault();
-
-        // Limpiamos mensajes anteriores
-        limpiarErrores();
-
-        // Variable para saber si el formulario
-        // tiene errores
         let formularioValido = true;
 
 
-        /* 
-           VALIDAR NOMBRE
-            */
+        // 
+        // VALIDAR NOMBRE
+        // 
 
         if (nombre.value.trim() === "") {
 
@@ -99,9 +67,9 @@
         }
 
 
-        /* 
-           VALIDAR CORREO
-            */
+        // 
+        // VALIDAR CORREO
+        // 
 
         if (email.value.trim() === "") {
 
@@ -123,9 +91,9 @@
         }
 
 
-        /* 
-           VALIDAR SERVICIO
-            */
+        // 
+        // VALIDAR SERVICIO
+        // 
 
         if (servicio.value === "") {
 
@@ -138,9 +106,9 @@
         }
 
 
-        /* 
-           VALIDAR MENSAJE
-            */
+        // 
+        // VALIDAR MENSAJE
+        // 
 
         if (mensaje.value.trim() === "") {
 
@@ -162,30 +130,30 @@
         }
 
 
-        /* 
-           RESULTADO
-            */
+        // 
+        // RESULTADO
+        // 
 
         if (formularioValido) {
 
             formSuccess.textContent =
-                "✓ Mensaje enviado correctamente. " +
+                "✓ Solicitud enviada correctamente. " +
                 "Nos pondremos en contacto contigo.";
 
             formSuccess.classList.add("show");
 
-            // Limpiar los datos del formulario
+            // Limpiar formulario
             form.reset();
 
+            console.log("Formulario válido");
         }
 
     });
 
 
-    /*
-       Cuando el usuario modifica un campo
-       que tenía error, eliminamos el borde rojo.
-    */
+    // 
+    // QUITAR ERROR DEL NOMBRE
+    // 
 
     nombre.addEventListener("input", function () {
 
@@ -198,16 +166,25 @@
     });
 
 
+    // 
+    // QUITAR ERROR DEL CORREO
+    // 
+
     email.addEventListener("input", function () {
 
         if (correoValido(email.value.trim())) {
 
             email.classList.remove("input-error");
             emailError.textContent = "";
+
         }
 
     });
 
+
+    // 
+    // QUITAR ERROR DEL SERVICIO
+    // 
 
     servicio.addEventListener("change", function () {
 
@@ -219,6 +196,10 @@
 
     });
 
+
+    // 
+    // QUITAR ERROR DEL MENSAJE
+    // 
 
     mensaje.addEventListener("input", function () {
 
