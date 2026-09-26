@@ -60,7 +60,7 @@
     function correoValido(correo) {
 
         const patron =
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
         return patron.test(correo);
     }
