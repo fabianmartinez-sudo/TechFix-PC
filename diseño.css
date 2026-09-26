@@ -1328,3 +1328,83 @@ img {
         bottom: 18px;
     }
 }
+
+/* 
+    31. ANIMACIÓN PARA TÍTULOS
+    */
+
+.hero h1 {
+    animation: tituloEntrada 1s ease;
+}
+
+.page-hero h1 {
+    animation: tituloEntrada 0.8s ease;
+}
+
+@keyframes tituloEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        letter-spacing: 5px;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: normal;
+    }
+}
+/* 
+    32. ELEMENTOS DECORATIVOS DEL HERO
+    */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.08);
+    top: -120px;
+    right: -80px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(124, 58, 237, 0.07);
+    bottom: -80px;
+    left: -60px;
+}
+
+.hero-content,
+.hero-image {
+    position: relative;
+    z-index: 1;
+}
+
+/* 
+    33. SEPARADORES DECORATIVOS
+    */
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin: 12px auto 0;
+    border-radius: 10px;
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed
+    );
+}
