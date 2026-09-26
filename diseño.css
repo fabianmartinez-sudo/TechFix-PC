@@ -127,6 +127,7 @@ img {
 }
 
 
+
 /* 
    5. BOTONES
     */
@@ -791,9 +792,51 @@ img {
     color: var(--text);
 }
 
+/* 
+ 18. Campo con error 
+    */
+.input-error {
+    border-color: var(--error) !important;
+
+    background: #fffafa !important;
+}
+
+.error-message {
+    min-height: 18px;
+
+    color: var(--error);
+
+    font-size: 0.85rem;
+}
 
 /* 
-   18. FOOTER
+   19. MENSAJE DE ÉXITO
+      */
+.success-message {
+    display: none;
+
+    padding: 14px;
+
+    background: var(--success-bg);
+
+    border: 1px solid #86efac;
+
+    color: var(--success);
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+.success-message.show {
+    display: block;
+}
+
+/* 
+   20. FOOTER
     */
 
 .footer {
@@ -855,9 +898,12 @@ img {
 
 
 /* 
-   19. DISEÑO RESPONSIVE
+   21. DISEÑO RESPONSIVE
     */
 
+    /* 
+   21.1. RESPONSIVE - TABLETS
+    */
 @media (max-width: 900px) {
 
     .hero-content {
@@ -894,6 +940,9 @@ img {
     }
 }
 
+/* 
+   21.2. RESPONSIVE - CELULARES.
+    */
 
 @media (max-width: 650px) {
 
@@ -962,3 +1011,320 @@ img {
     }
 }
 
+/* 
+    22. NUEVOS EFECTOS VISUALES
+    */
+
+.service-card,
+.product-card,
+.faq-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before,
+.product-card::before,
+.faq-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed,
+        #06b6d4
+    );
+    transition: 0.4s ease;
+}
+
+.service-card:hover::before,
+.product-card:hover::before,
+.faq-card:hover::before {
+    left: 0;
+}
+
+
+/* 
+    23. NUEVO EFECTO PARA ICONOS
+    */
+
+.card-icon,
+.product-icon,
+.service-item-icon,
+.contact-icon {
+    transition: 0.3s ease;
+}
+
+.card-icon:hover,
+.product-icon:hover,
+.service-item-icon:hover,
+.contact-icon:hover {
+    transform: rotate(-5deg) scale(1.1);
+}
+
+
+/* 
+    24. NUEVA SECCIÓN DE PROMOCIONES
+    */
+
+.promo-section {
+    padding: 70px 0;
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #f5f3ff
+    );
+}
+
+.promo-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 30px;
+    padding: 35px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+}
+
+.promo-card h2 {
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.promo-card p {
+    color: #475569;
+}
+
+.promo-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+
+/* 
+    25. NUEVAS ETIQUETAS
+    */
+
+.new-label {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.offer-label {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #fef3c7;
+    color: #92400e;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* 
+    26. NUEVA BARRA DE INFORMACIÓN
+    */
+
+.info-bar {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 12px 0;
+}
+
+.info-bar-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.info-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+.info-bar-item span {
+    color: #60a5fa;
+}
+
+
+/* 
+    27. NUEVO EFECTO PARA BOTONES
+    */
+
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.20);
+    transform: skewX(-20deg);
+    transition: 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 130%;
+}
+
+
+/* 
+    28. NUEVA TARJETA DE ESTADO
+    */
+
+.status-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.06);
+}
+
+.status-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.12);
+}
+
+.status-card strong {
+    color: #0f172a;
+}
+
+.status-card span {
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+
+/* 
+    29. NUEVA SECCIÓN DE BENEFICIOS
+    */
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.benefit {
+    text-align: center;
+    padding: 25px 18px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    transition: 0.3s ease;
+}
+
+.benefit:hover {
+    transform: translateY(-6px);
+    border-color: #93c5fd;
+    box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
+}
+
+.benefit-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.benefit h3 {
+    color: #0f172a;
+    margin-bottom: 7px;
+}
+
+.benefit p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+
+/* 
+    30. BOTÓN FLOTANTE DE CONTACTO
+    */
+
+.contact-float {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 1.4rem;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+    z-index: 999;
+    transition: 0.3s ease;
+}
+
+.contact-float:hover {
+    transform: translateY(-5px) scale(1.08);
+}
+
+
+/* 
+    31. RESPONSIVE DE LOS NUEVOS ELEMENTOS
+    */
+
+@media (max-width: 900px) {
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .promo-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-bar-content {
+        gap: 12px;
+    }
+
+    .promo-card {
+        padding: 25px;
+    }
+
+    .contact-float {
+        width: 52px;
+        height: 52px;
+        right: 18px;
+        bottom: 18px;
+    }
+}

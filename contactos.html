@@ -107,94 +107,144 @@
                     Completa el siguiente formulario. 
                 </p>
 
-                <form action="#" method="post">
-                    <div class="form-group">
-                        <label for="nombre">
-                            Nombre completo
-                        </label>
-                          
-                        <input
-                            type="text" 
-                            id="nombre" 
-                            name="nombre" 
-                            placeholder="Escribe tu nombre" 
-                            required
-                          >  
-                    </div>
+                <form id="contactForm" class="contact-form" novalidate>
+
+                    <!-- NOMBRE -->
 
                     <div class="form-group">
-                        <label 
-                           for="correo"> Correo electrónico 
-                        </label>
 
-                        <input 
-                        
-                        type="email" 
-                        id="correo" 
-                        name="correo" 
-                        placeholder="ejemplo@correo.com" required 
-                        >
+                            <label for="nombre">
+                                Nombre completo
+                            </label>
 
-                    </div>
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                placeholder="Escribe tu nombre"
+                            >
+
+                            <small
+                                id="nombreError"
+                                class="error-message">
+                            </small>
+
+                        </div>
+
+                     <!-- CORREO -->
+
+                    <div class="form-group">
+
+                            <label for="email">
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="ejemplo@correo.com"
+                            >
+
+                            <small
+                                id="emailError"
+                                class="error-message">
+                            </small>
+
+                        </div>
+
+                     <!-- SERVICIO -->
 
                 <div class="form-group">
 
-                        <label for="servicio"> 
-                            ¿Qué necesitas? 
-                        </label>
+                            <label for="servicio">
+                                ¿Qué necesitas?
+                            </label>
 
-                    <select
-                           id="servicio" 
-                           name="servicio" 
-                           required > 
-                           
-                           <option value=""> 
-                            Selecciona una opción 
-                           </option> 
-                           
-                           <option value="preventivo"> 
-                            Mantenimiento preventivo 
-                        </option> 
-                        
-                        <option value="correctivo"> 
-                            Mantenimiento correctivo 
-                        </option> 
-                        
-                        <option value="repuestos"> 
-                            Compra de repuestos 
-                        </option> 
-                        
-                        <option value="actualizacion"> 
-                            Actualización de computador 
-                        </option> 
-                        
-                        <option value="asesoria"> 
-                            Asesoría 
-                        </option> 
-                    </select> 
-                </div>
+                            <select
+                                id="servicio"
+                                name="servicio">
+
+                                <option value="">
+                                    Selecciona una opción
+                                </option>
+
+                                <option value="preventivo">
+                                    Mantenimiento preventivo
+                                </option>
+
+                                <option value="correctivo">
+                                    Mantenimiento correctivo
+                                </option>
+
+                                <option value="repuestos">
+                                    Compra de repuestos
+                                </option>
+
+                                <option value="actualizacion">
+                                    Actualización de computador
+                                </option>
+
+                                <option value="asesoria">
+                                    Asesoría
+                                </option>
+
+                                <option value="accesorios">
+                                    Accesorios
+                                </option>
+
+                                <option value="otro">
+                                    Otra consulta
+                                </option>
+
+                            </select>
+
+                            <small
+                                id="servicioError"
+                                class="error-message">
+                            </small>
+
+                        </div>
+
+                <!-- MENSAJE -->
 
                 <div class="form-group">
 
-                    <label for="mensaje"> 
-                        Mensaje 
-                    </label>
+                            <label for="mensaje">
+                                Mensaje
+                            </label>
 
-                   <textarea 
-                      id="mensaje" 
-                      name="mensaje" 
-                      rows="5" placeholder="Cuéntanos qué problema presenta tu computador..." 
-                      required >
+                            <textarea
+                                id="mensaje"
+                                name="mensaje"
+                                rows="5"
+                                placeholder="Cuéntanos qué problema presenta tu computador..."
+                            ></textarea>
 
-                   </textarea> 
-                </div>
+                            <small
+                                id="mensajeError"
+                                class="error-message">
+                            </small>
+
+                        </div>
                    <button 
+                     
                        type="submit" 
                        class="btn btn-primary btn-full" 
                        > 
                          Enviar solicitud 
 
                    </button>
+
+                         <!-- MENSAJE DE ÉXITO -->
+
+                        <div
+                            id="formSuccess"
+                            class="success-message"
+                            role="status"
+                            aria-live="polite">
+                        </div>
+
                 </form>
 
             </div>  
@@ -252,6 +302,19 @@
 
                     </article>
 
+                    <article class="faq-card">
+
+                        <span>04</span>
+
+                        <h3>Consulta antes de comprar</h3>
+
+                        <p>
+                            Puedes contactarnos antes de comprar un
+                            repuesto o accesorio para recibir orientación.
+                        </p>
+                        
+                    </article>
+
 
                 </div>
             </div>
@@ -291,5 +354,8 @@
                 </div>
                               
         </footer>
+
+              <!--  JAVASCRIPT  -->
+        <script src="js/script.js"></script>
   </body>
 </html>
